@@ -1,39 +1,49 @@
-# google-natural-language-API-sample
+# Google Cloud Natural Language API Sample
 
-This template should help get you started developing with Vue 3 in Vite.
+Google Cloud Natural Language APIを利用したテキスト感情分析アプリケーション。入力されたテキストを文節ごとに分析し、感情の度合いを視覚的に表示します。
 
-## Recommended IDE Setup
+## 機能
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- テキスト全体の感情分析
+- 文節ごとの感情分析（色分け表示）
+- 各文節のホバーでツールチップ表示
+  - 感情スコア (-1.0 ~ 1.0)
+  - 感情の大きさ
+  - 判定（ポジティブ/ネガティブ/ニュートラル）
 
-## Type Support for `.vue` Imports in TS
+## セットアップ
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+1. プロジェクトのクローン
+```bash
+git clone [repository-url]
+```
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+2. 依存関係のインストール
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+3. 環境変数の設定
+```bash
+cp .env.example .env
+```
+`.env`ファイルにGoogle Cloud Platform APIキーを設定:
+```
+VITE_GOOGLE_API_KEY=your_api_key_here
+```
 
-```sh
+4. 開発サーバーの起動
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## APIキーの取得方法
 
-```sh
-npm run build
-```
+1. Google Cloud Platformでプロジェクトを作成
+2. Cloud Natural Language APIを有効化
+3. 認証情報からAPIキーを生成
 
-### Lint with [ESLint](https://eslint.org/)
+## 注意事項
 
-```sh
-npm run lint
-```
+- APIキーは`.env`ファイルで管理し、公開リポジトリにはコミットしないでください
+- ビルド済みファイルは公開しないでください
